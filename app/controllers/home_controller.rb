@@ -81,7 +81,7 @@ class HomeController < ApplicationController
     redirect_to "/list"
   end
   
-  
+ 
   
   
 end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
-
+  
   get 'home/index'
   resources :posts
   
@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   post 'home/reply_update_ok/:id' => 'home#reply_update_ok'
   
   
+  get '/morefit' => 'home#morefit'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
