@@ -11,6 +11,7 @@ class HomeController < ApplicationController
   def data
         @one_post = Videopost.new
         @one_post.video_title = params[:title]
+        @one_post.video_values = params[:values]
         @one_post.user_name = params[:name]
         #@one_post.user_id = User.find(params[:user_id])
         @one_post.video_content = params[:content]
@@ -36,6 +37,7 @@ class HomeController < ApplicationController
   def updateok
         @one_post = Videopost.find(params[:id])
         @one_post.video_title = params[:title]
+        @one_post.video_values = params[:values]
         #@one_post.user_id = User.find(params[:user_id])
         @one_post.video_content = params[:content]
         @one_post.save

@@ -26,10 +26,11 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="thumbnail">
-                           <video style="width: 100%; height: 100%;" src="<%=p.image_url %>" >
+                           <img style="width: 100%; height: 100%;" src="<%=p.image_url %>" >
                     </div>
                     <div class="panel-heading">
-                        <a href="/detail/<%= p.id %>" class="portfolio-text"> <%= p.video_title%> </a>
+                        <a href="/detail/<%= p.id %>" class="portfolio-text"> <%= p.video_title%></a>
+                        <p><%= p.video_values%></p>
                     </div>
                 </div>
               </div>
