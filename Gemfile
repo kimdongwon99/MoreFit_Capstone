@@ -12,6 +12,7 @@ gem 'cancancan', '~> 1.10'
 gem 'rolify' #역할, 등급을 부여해주는 잼
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'rails_db'
 
 group :development do
   gem 'sqlite3'
