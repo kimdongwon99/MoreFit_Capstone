@@ -18,13 +18,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
 <div class="container">
 
   <table class="table">
@@ -37,10 +30,30 @@
         
       </tr>
     </thead>
+ <%# 공지 사항 게시글만 보여짐. %>
+  <tbody>
+    <% @posts.each do |post| %>
+      <% if post.notice == true %>
+        <tr>
+          <font color="red">
+          <td><%= post.title %></td>
+          <td><%= post.user.name %></td>
+          <% if current_user.has_role? :admin %>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+          
+          <% end %>
+          </font>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
   
     <tbody>
-      <% @postss =@posts.reverse %>
-      <% @postss.each do |post| %>
+      <%# @postss =@posts.reverse %>
+      <% @posts.each do |post| %>
         <tr>
           <td><%= link_to post.title , post %></td>
           <td><%= post.user.name %></td>
@@ -64,10 +77,9 @@
         <div class="col-md-4 col-md-offset-3">
 
   <% if current_user.nil? %>
-  
     <div class="col-md-6 col-md-offset-0"><a href="/users/sign_in"><button type="button" class="flat-butt flat-info-butt">WRITE WITH LOGIN!</button></a></div>
   <%else%>
-    <div class="col-md-6 col-md-offset-0"><a href="/posts/new"><button type="button" class="flat-butt flat-info-butt">WRITE!</button></a></div>
+      <div class="col-md-6 col-md-offset-0"><a href="/posts/new"><button type="button" class="flat-butt flat-info-butt">WRITE!</button></a></div>
   <%end%>
   
   </div>

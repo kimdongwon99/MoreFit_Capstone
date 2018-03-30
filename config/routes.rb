@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :grade_points
   root :to => "home#index"
 
   devise_for :users
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
   get 'home/reply_update' => 'home#reply_update'
   get 'home/reply_update/:id' => 'home#reply_update'
   post 'home/reply_update_ok/:id' => 'home#reply_update_ok'
+  
   
   
   get '/morefit' => 'home#morefit'

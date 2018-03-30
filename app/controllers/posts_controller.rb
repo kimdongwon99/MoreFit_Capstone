@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   # GET /posts/1
@@ -70,7 +71,8 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params[:post][:user_id] = current_user.id
+      params.require(:post).permit(:title, :content, :user_id, :notice)
     end
 end
 
@@ -78,7 +80,6 @@ def search
   @posts = Post.search do
     keywords params[:query]
   end.results
-  
   respond_to do |format|
     format.html { render :action => "index" }
     format.xml  { render :xml => @posts }
