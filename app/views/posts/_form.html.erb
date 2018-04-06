@@ -19,7 +19,9 @@
   <div class="field">
     <%= f.label :content %><br>
     <%=tinymce%>
+
     <%= f.text_area :content, :class => "form-control tinymce", :rows => 20, :cols => 5 %>
+
   </div>
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
