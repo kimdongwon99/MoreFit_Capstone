@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  # devise_for :admin
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :grade_points
   root :to => "home#index"
 
@@ -107,4 +108,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # devise_for :admin
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
