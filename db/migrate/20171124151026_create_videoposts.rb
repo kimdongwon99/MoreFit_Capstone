@@ -2,7 +2,7 @@ class CreateVideoposts < ActiveRecord::Migration
   def change
     create_table :videoposts do |t|
       t.string :video_title
-      t.string :video_values
+      t.integer :video_values
       t.text :video_content
       t.integer :hit
       t.string :user_name

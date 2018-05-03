@@ -13,15 +13,19 @@
                 <h3>가격 : <%=@one_post.video_values%></h3>
                 <h3>내용 : <%=@one_post.video_content%></h3>
                 
-            
+                <form action="/zzim" method="get">
+                        <input type="hidden" name="zzim_title"value="<%=@one_post.video_title%>">
+                        <input type="hidden" name="zzim_price" value=<%=@one_post.video_values%>>
+                        <button type="submit" class="btn-default2"><span>장바구니에 넣기</span></button>
+                </form>
                 
                 <div class="txtbox">
-                    <% if current_user.name == @one_post.user_name %>
+                    
                         <%= link_to '수정', home_update_path(@one_post.id)  %>
-                    <% end %>
-                    <% if current_user.name == @one_post.user_name %>
+                    
+                    
                         <%= link_to '삭제', home_delete_path(@one_post.id) ,  data: { confirm: '정말 삭제하시겠습니까?' } %>
-                    <% end %>
+                    
                     <%= link_to '목록', list_path %> 
                 </div>
             </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126024153) do
+ActiveRecord::Schema.define(version: 20180502174110) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 20171126024153) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
 
+  create_table "shoppingcarts", force: :cascade do |t|
+    t.string   "zzim_title"
+    t.integer  "zzim_price"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -79,6 +87,9 @@ ActiveRecord::Schema.define(version: 20171126024153) do
     t.boolean  "admin"
     t.integer  "age"
     t.string   "name"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "gender"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -93,7 +104,7 @@ ActiveRecord::Schema.define(version: 20171126024153) do
 
   create_table "videoposts", force: :cascade do |t|
     t.string   "video_title"
-    t.string   "video_values"
+    t.integer  "video_values"
     t.text     "video_content"
     t.integer  "hit"
     t.string   "user_name"

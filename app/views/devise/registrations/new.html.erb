@@ -15,8 +15,22 @@
             <%= f.text_field :name, autofocus: true, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :age %>
+          <%= f.label :나이 %>
           <%= f.number_field :age, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.label :키 %>
+            <%= f.number_field :height, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.label :몸무게 %>
+            <%= f.number_field :weight, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <p style="margin-bottom:0;"><%= f.label :성별 %></p>
+            <label class="radio_button active"> 남자
+               <%= f.radio_button :gender, '남자', checked: true %>
+            </label>
         </div>
         <div class="form-group">
           <%= f.label :password %>
