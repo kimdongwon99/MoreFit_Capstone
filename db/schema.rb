@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_174110) do
     t.string "zzim_title"
     t.integer "zzim_price"
     t.integer "user_id"
+    t.string "zzim_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

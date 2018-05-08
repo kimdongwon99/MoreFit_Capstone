@@ -1,15 +1,18 @@
-<h2>장바구니</h2>
+<div class="container" style="margin-bottom:150px">
+<h2>My ShoppingCart</h2>
     <% @zzim_list2.each do |c| %>
         <% if c.user_id == current_user.id %>
-                <div>
-                상품 - <%= c.zzim_title %>
-                가격 - <%= c.zzim_price %>
-                <%@cartsum+=c.zzim_price %>
-                <a href="/home/zzimdelete/<%=c.id%>">--삭제하기</a>
+                <div style="display:flex; justify-content: space-between; Align-items:center;">
+                <img style="width: 150px; height: 150px; margin-bottom:30px;" src="<%= c.zzim_image %>" controls>    
+               <h3 > 상품 - <%= c.zzim_title %></h3>
+              <h3>  가격 - <%= c.zzim_price %></h3>
+                <h3><span><%= @cartsum+=c.zzim_price %>원입니다</span></h3>
+                <form action="/home/zzimdelete/<%=c.id%>" method="get">
+                <button >삭제하기</button>
+                </form>
                 </div>
+                <hr size="50" color="black">
         <%end%>
-        
-    
 <%end%>
-
-총 주문가격은 <%=@cartsum %>입니다.
+<h2 align="center">총 주문가격은 <%=@cartsum %>입니다.</h2>
+</div>

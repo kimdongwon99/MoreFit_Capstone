@@ -87,6 +87,7 @@ class HomeController < ApplicationController
       @zzim_list = Shoppingcart.new
       @zzim_list.zzim_title = params[:zzim_title]
       @zzim_list.zzim_price = params[:zzim_price]
+      @zzim_list.zzim_image = params[:zzim_image]
       @zzim_list.user_id = current_user.id
       @zzim_list.save
        

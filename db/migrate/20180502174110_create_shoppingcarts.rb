@@ -4,7 +4,7 @@ class CreateShoppingcarts < ActiveRecord::Migration[5.0]
       t.string :zzim_title
       t.integer :zzim_price
       t.integer :user_id
-
+      t.string :zzim_image
       t.timestamps null: false
     end
   end
