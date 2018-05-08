@@ -1,4 +1,4 @@
-class CreateShoppingcarts < ActiveRecord::Migration
+class CreateShoppingcarts < ActiveRecord::Migration[5.0]
   def change
     create_table :shoppingcarts do |t|
       t.string :zzim_title

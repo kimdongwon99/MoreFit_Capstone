@@ -14,3 +14,11 @@ User.create(
         password: "123456",
         admin: 1
     )
+
+user = User.create( email: 'admin@google.com', password: '123456' ,name: "운영자")
+user = User.find(1)
+user.add_role :admin
+
+user = User.create( email: 'dongwon@likelion.org', password: '123456' )
+user = User.find(2)
+

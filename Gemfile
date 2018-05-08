@@ -8,28 +8,36 @@ gem 'figaro'
 gem 'mini_magick'
 gem 'devise' #회원가입 및 회원 관리를 용이하게
 gem 'devise-bootstrap-views'
-gem 'cancancan', '~> 1.10' 
+gem 'cancancan'
 gem 'rolify' #역할, 등급을 부여해주는 잼
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'rails_db'
 
 group :development do
   gem 'sqlite3'
 end
 
+gem 'activemodel'
+
+
 gem 'pg',      :group=> :production
 gem 'rails_12factor', group: :production
 
+gem 'rails_admin', '~> 1.2'
+# [출처] 레일즈/Ruby on Rails : 어드민 관리자 페이지 [Gem : rails_admin]|작성자 Languid
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+
 ruby '2.3.4'
+gem 'rails', '~> 5.2'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -58,7 +66,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'rails_db'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

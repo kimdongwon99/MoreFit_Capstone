@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  # devise_for :admin
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :grade_points
   root :to => "home#index"
 
   devise_for :users
@@ -48,6 +50,7 @@ Rails.application.routes.draw do
   get 'home/reply_update' => 'home#reply_update'
   get 'home/reply_update/:id' => 'home#reply_update'
   post 'home/reply_update_ok/:id' => 'home#reply_update_ok'
+  
   
   
   get '/morefit' => 'home#morefit'
@@ -110,4 +113,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # devise_for :admin
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end

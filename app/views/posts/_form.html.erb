@@ -19,7 +19,9 @@
   <div class="field">
     <%= f.label :content %><br>
     <%=tinymce%>
-    <%= f.text_area :content, :class => "form-control tinymce", :rows => 40, :cols => 120 %>
+
+    <%= f.text_area :content, :class => "form-control tinymce", :rows => 20, :cols => 5 %>
+
   </div>
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -28,5 +30,12 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <% if current_user.has_role? :admin %>
+  <font color="red">어드민 전용 : 해당 게시글 공지사항 설정 </font><br/>
+  <%= f.check_box :notice, id: :post_notice %>
+<% end %>
+
+
+
 <% end %>
 </div>
