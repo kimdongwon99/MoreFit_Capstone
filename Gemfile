@@ -21,7 +21,7 @@ end
 gem 'activemodel'
 
 
-gem 'pg' , '1.0.0',      :group=> :production
+# gem 'pg' , '1.0.0',      :group=> :production
 gem 'rails_12factor', group: :production
 
 gem 'rails_admin', '~> 1.2'
