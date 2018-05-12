@@ -20,8 +20,13 @@
           <% end %>
           <%= link_to '목록', list_path %> 
         </div>
+        <form action="/home/mypage" method="get">
+                        <input type="hidden" value= "아이언맨" name="name">
+                        <button type="submit" class="btn-default2"><span>내 목록에 추가하기</span></button>
+        </form> 
       </div>
       <hr>
+      
       <!-- 라이브리 시티 설치 코드 -->
 <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAxOC84NTgy">
 <script type="text/javascript">

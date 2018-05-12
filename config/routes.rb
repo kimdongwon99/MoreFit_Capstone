@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   get 'home/reply_update/:id' => 'home#reply_update'
   post 'home/reply_update_ok/:id' => 'home#reply_update_ok'
   
-  
+  get '/home/mypage' => 'home#mypage'
   
   get '/morefit' => 'home#morefit'
   # The priority is based upon order of creation: first created -> highest priority.

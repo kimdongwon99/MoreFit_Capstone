@@ -57,12 +57,8 @@ class HomeController < ApplicationController
         @one_post = Videopost.find(params[:id])
         @one_post.hit +=1
         @one_post.save
-        
-        
   end
   
-  
-    
     # db에 있는 모든값을 출력해 주는 기능
   def list
         @all_post = Videopost.all
@@ -71,7 +67,6 @@ class HomeController < ApplicationController
        else
        @all_post = Videopost.where("video_title LIKE ?", "%#{params[:query]}%")
         end
-
   end
   
   def upload
@@ -83,7 +78,11 @@ class HomeController < ApplicationController
     redirect_to "/list"
   end
   
- 
-  
+  def mypage
+      @zzim_list = Videopost.new
+      @zzim_list.video_title = params[:name]
+      @zzim_list.user_id = current_user.id
+      @zzim_list.save
+  end
   
 end
