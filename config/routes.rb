@@ -54,6 +54,11 @@ Rails.application.routes.draw do
   get '/home/mypage' => 'home#mypage'
   
   get '/morefit' => 'home#morefit'
+  
+  get '/shoppingcart' => 'home#shoppingcart'
+  get '/zzim' => "home#zzim"
+  get 'home/zzimdelete'
+  get 'home/zzimdelete/:id' => 'home#zzimdelete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

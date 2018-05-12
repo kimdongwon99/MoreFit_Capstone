@@ -78,11 +78,30 @@ class HomeController < ApplicationController
     redirect_to "/list"
   end
   
-  def mypage
-      @zzim_list = Videopost.new
-      @zzim_list.video_title = params[:name]
+
+  def zzim
+      @zzim_list = Shoppingcart.new
+      @zzim_list.zzim_title = params[:zzim_title]
+      @zzim_list.zzim_price = params[:zzim_price]
+      @zzim_list.zzim_image = params[:zzim_image]
       @zzim_list.user_id = current_user.id
       @zzim_list.save
+       
+      redirect_to '/shoppingcart'
+
   end
   
+  def zzimdelete
+    
+    @zzim_what = Shoppingcart.find(params[:id])
+    @zzim_what.destroy
+    
+    redirect_to '/shoppingcart'
+  end
+  
+  def shoppingcart
+    @zzim_list2 = Shoppingcart.all
+    @cartsum=0
+  end
+
 end
